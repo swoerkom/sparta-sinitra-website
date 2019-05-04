@@ -1,0 +1,8 @@
+<h1>films/index.erb</h1>
+<% @films.each do |film|  %>
+<div>
+  <h3><a href="/films/<%= film.filmid %>"><%= film.filmname %></a></h3>
+  <p>Director: <%= film.director%></p>
+  <p>Genre: <%= film.genreid%></p>
+</div>
+<% end %>

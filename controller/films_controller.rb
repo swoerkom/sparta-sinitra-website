@@ -14,10 +14,10 @@ class FilmsController < Sinatra::Base
 
   post "/films" do
     film = Films.new
-    film.filmid = post_data['filmid']
-    film.filmname = post_data['filmname']
-    film.director = post_data['director']
-    film.genreid = post_data['genreid']
+    film.filmid = params['filmid']
+    film.filmname = params['filmname']
+    film.director = params['director']
+    film.genreid = params['genreid']
     film.save
     redirect "/films"
   end
@@ -29,18 +29,17 @@ class FilmsController < Sinatra::Base
   end
 
   delete "/films/:id" do
-    id = params[:filmid].to_i
-    Post.destory(id)
+    id = params[:id].to_i
+    Films.destroy(id)
   redirect "/films"
   end
 
   put "/films/:id" do
-    id = params[:filmid].to_i
-    post = Post.find(id)
-    film.filmid = post_data['filmid']
-    film.filmname = post_data['filmname']
-    film.director = post_data['director']
-    film.genreid = post_data['genreid']
+    id = params[:id].to_i
+    film = Films.find(id)
+    film.filmname = params['filmname']
+    film.director = params['director']
+    film.genreid = params['genreid']
     film.save
     redirect "/films"
   end

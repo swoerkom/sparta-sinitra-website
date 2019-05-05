@@ -22,14 +22,9 @@ class FilmsController < Sinatra::Base
     redirect "/films"
   end
 
-  get "/films/new" do
-    @films = Film.new
-    erb :'films/new'
-  end
-
   get "/films/:id/:edit" do
     id = params[:id].to_i
-    @post = Post.find(id)
+    @film = Films.find(id)
     erb :'films/edit'
   end
 
@@ -48,7 +43,6 @@ class FilmsController < Sinatra::Base
     film.genreid = post_data['genreid']
     film.save
     redirect "/films"
-
   end
 
   get "/films/:id" do

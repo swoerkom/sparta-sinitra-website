@@ -1,0 +1,7 @@
+<h1><%= @genres.name %></h1>
+<p>Genre: <%= @genres.name %></p>
+<a href="<%= @genres.genreid %>/edit">Edit</a>
+<form action="<%= @genres.genreid %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete">
+</form>

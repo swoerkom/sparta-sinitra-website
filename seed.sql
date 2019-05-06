@@ -23,5 +23,13 @@ CREATE TABLE films (
 
 INSERT INTO genre (name) VALUES ('Horror');
 INSERT INTO genre (name) VALUES ('Action');
+INSERT INTO genre (name) VALUES ('Sci-Fi');
+INSERT INTO genre (name) VALUES ('Thriller');
 INSERT INTO books (author, bookname, genreid) VALUES ('JK Rowling', 'Harry Potter 1', 1);
-INSERT INTO films (director, filmname, genreid) VALUES ('A Russo', 'Avengers Endgame', 2);
+INSERT INTO books (author, bookname, genreid) VALUES ('JK Rowling', 'Harry Potter 2', 1);
+INSERT INTO books (author, bookname, genreid) VALUES ('JK Rowling', 'Harry Potter 3', 1);
+INSERT INTO books (author, bookname, genreid) VALUES ('JK Rowling', 'Harry Potter 4', 1);
+INSERT INTO films (director, filmname, genreid) VALUES ('A Russo', 'Avengers 1', 2);
+INSERT INTO films (director, filmname, genreid) VALUES ('A Russo', 'Avengers 2', 2);
+INSERT INTO films (director, filmname, genreid) VALUES ('A Russo', 'Avengers 3', 2);
+INSERT INTO films (director, filmname, genreid) VALUES ('A Russo', 'Avengers 4', 2);

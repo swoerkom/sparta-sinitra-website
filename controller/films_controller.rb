@@ -9,6 +9,7 @@ class FilmsController < Sinatra::Base
 
   get "/films" do
     @films = Films.all
+    @genre = Genres.all
     erb :'films/index'
   end
 

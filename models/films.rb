@@ -38,12 +38,12 @@ def self.hydrate(post_data) #Returns post object with the values (ID, title, bod
   film
 end
 
-def save
+  def save
     connection = Films.open_connection
-    if(!self.filmid)
-      sql = "INSERT INTO Films (filmname, director, genreid) VALUES ('#{self.filmname}','#{self.director}', 2)"
+    if(self.filmid != "")
+      sql = "INSERT INTO Films (filmname, director, genreid) VALUES ('#{self.filmname}','#{self.director}', '#{self.genreid}')"
     else
-      sql = "UPDATE Films SET filmname = '#{self.filmname}', director = '#{self.director}' WHERE filmid = '#{self.filmid}'"
+      sql = "UPDATE Films SET filmname = '#{self.filmname}', director = '#{self.director}', genreid = '#{self.genreid}' WHERE filmid = '#{self.filmid}'"
     end
     connection.exec(sql)
   end

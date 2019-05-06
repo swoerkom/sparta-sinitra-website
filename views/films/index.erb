@@ -1,8 +1,12 @@
-<h1>films/index.erb</h1>
-<% @films.each do |film|  %>
-<div>
-  <h3><a href="/films/<%= film.filmid %>"><%= film.filmname %></a></h3>
-  <p>Director: <%= film.director%></p>
-  <p>Genre: <%= film.genreid%></p>
+<div class="row">
+  <div class="col-md-12">
+  <% @films.each do |film|  %>
+  <div class="col-md-3 col-sm-6 col-xs-12">
+    <img class="bg-overlay film-cover-top gradient img-responsive" src="images/1.jpeg" >
+    <h3><a href="/films/<%= film.filmid %>"><%= film.filmname %></a></h3>
+    <h4>Director: <%= film.director%></h4>
+    <h4>Genre: <%= film.genreid%></h4>
+  </div>
+  <% end %>
+  </div>
 </div>
-<% end %>

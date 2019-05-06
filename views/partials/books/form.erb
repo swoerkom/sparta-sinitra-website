@@ -1,0 +1,25 @@
+<form action="/" method="post">
+  <div>
+    <label>Book Name</label>
+    <input type="text" name="bookname" placeholder="Enter a Name" value="<%= @book.bookname %>">
+  </div>
+  <div>
+    <label>Author</label>
+    <input type="text" name="author" placeholder="Enter a Name" value="<%= @book.author %>">
+  </div>
+  <div>
+    <label>Genre ID</label>
+    <select name="genreid">
+      <option value="<%= @book.genreid = 1 %>">Horror</option>
+      <option value="<%= @book.genreid = 2 %>">Action</option>
+      <option value="<%= @book.genreid = 3%>">Sci-Fi</option>
+      <option value="<%= @book.genreid = 4%>">Thriller</option>
+    </select>
+  </div>
+  <div>
+    <input class="btn-primary" type="submit" value="Add Book">
+  </div>
+  <% if(!@book.bookid) %>
+    <input type="hidden" name="_method" value="put">
+  <% end %>
+</form>

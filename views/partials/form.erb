@@ -1,15 +1,20 @@
-<form action="/<%= @film.filmid %>" method="post">
+<form method="post">
   <div>
     <label>Film Name</label>
-    <input type="text" name="title" placeholder="Enter a Name" value="<%= @film.filmname %>">
+    <input type="text" name="filmname" placeholder="Enter a Name" value="<%= @film.filmname %>">
   </div>
   <div>
     <label>Director</label>
-    <input type="text" name="title" placeholder="Enter a Name" value="<%= @film.director %>">
+    <input type="text" name="director" placeholder="Enter a Name" value="<%= @film.director %>">
   </div>
   <div>
     <label>Genre ID</label>
-    <input type="text" name="title" placeholder="Enter a genre ID" value="<%= @film.genreid %>">
+    <select name="genreid">
+      <option value="<%= @film.genreid = 1 %>">Horror</option>
+      <option value="<%= @film.genreid = 2 %>">Action</option>
+      <option value="<%= @film.genreid = 3%>">Sci-Fi</option>
+      <option value="<%= @film.genreid = 4%>">Thriller</option>
+    </select>
   </div>
   <div>
     <input type="submit" value="Save Post">
